@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Interactive comments section](https://github.com/wuzgood98/interactive-comments-section)
+- Live Site URL: [Interactive comments section](https://interactive-comments-section98.netlify.app/)
 
 ## My process
 
