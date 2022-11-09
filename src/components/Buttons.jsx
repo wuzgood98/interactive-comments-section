@@ -23,7 +23,7 @@ const Minus = ({ decrement }) => {
   )
 }
 
-const ReplyButton = ({ hidden = "", breakpoint = "", action, id }) => {
+const ReplyButton = ({ hidden = "", breakpoint = "", action }) => {
   return (
     <div className={`${hidden} ${breakpoint} select-none`}>
       <button aria-label="reply" onClick={action} className="group text-sm text-moderateBlue active:scale-95 transition-all font-semibold items-center gap-2 hover:text-moderateBlueHover flex">
