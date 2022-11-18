@@ -154,6 +154,7 @@ const CommentCard = ({ content, user, createdAt, score, id, replyingTo }) => {
           error={error}
           handleChange={handleChange}
           handleSubmit={(e) => handleSubmit(e)}
+          replyingTo={username}
         />
       )}
 
