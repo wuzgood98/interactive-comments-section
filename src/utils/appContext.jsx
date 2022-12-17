@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import commentsData from '../../data'
+import commentsData from '../../data.json'
 
 import useLocalStorage from "./useLocalStorage";
 
