@@ -30,16 +30,21 @@ const CommentCard = ({ content, user, createdAt, score, id, replyingTo }) => {
     setText("")
   }
 
+  const findId = (data, id) => {
+    return data.comments?.find((comment) => comment.id === id)
+      ?? data.comments?.map((comment) => comment.replies?.find((reply) => reply.id === id))
+  }
+
   const toggleReplying = () => {
     setIsReplying((prevState) => !prevState)
-    const temp = data.comments?.find((comment) => comment.id === id) ?? data.comments?.map((comment) => comment.replies?.find((reply) => reply.id === id))
+    const temp = findId(data, id)
     const tempUsername = Array.isArray(temp) ? temp.filter((item) => item !== undefined)[0].user.username : temp.user.username
     setUsername(tempUsername)
   }
 
   const toggleEditing = (id) => {
     setIsEditing((prevState) => !prevState)
-    const temp = data.comments?.find((comment) => comment.id === id) ?? data.comments?.map((comment) => comment.replies?.find((reply) => reply.id === id))
+    const temp = findId(data, id)
     const tempData = Array.isArray(temp) ? temp.filter((item) => item !== undefined)[0] : temp
     const textContent = replyingTo ? `@${replyingTo} ${tempData.content}` : tempData.content
     setText(textContent)
@@ -56,7 +61,7 @@ const CommentCard = ({ content, user, createdAt, score, id, replyingTo }) => {
 
   const openModal = (id) => {
     setIsModalOpen(true)
-    const temp = data.comments?.find((comment) => comment.id === id) ?? data.comments?.map((comment) => comment.replies?.find((reply) => reply.id === id))
+    const temp = findId(data, id)
     let tempId = Array.isArray(temp) ? temp.filter((item) => item !== undefined)[0].id : temp.id
     setDeleteCommentId(tempId)
   }
